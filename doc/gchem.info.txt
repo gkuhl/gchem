@@ -1,0 +1,23 @@
+Help on module gchem.info in gchem:
+
+NAME
+    gchem.info - Functions for reading 'tracerinfo.dat' and 'diaginfo.dat'.
+
+FILE
+    /home/gerrit/Projects/gchem/gchem/info.py
+
+FUNCTIONS
+    read(tracerinfo, diaginfo)
+        Returns the following dicts `category2offset`,`category2comment`
+        and `tracer2info`.
+    
+    read_diaginfo(filename)
+        Read 'diaginfo.dat'-file with given `filename`.
+    
+    read_fixed_format(string, format)
+        Converts `string` with given `format` to dictionary.
+    
+    read_tracerinfo(filename)
+        Read a 'tracerinfo.dat'-file with given `filename`.
+
+

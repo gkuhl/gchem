@@ -1,0 +1,29 @@
+Help on package gchem:
+
+NAME
+    gchem - A Python Script Collection for GEOS-Chem Chemistry Transport Model
+
+FILE
+    /home/gerrit/Projects/gchem/gchem/__init__.py
+
+DESCRIPTION
+    This module provides functions and classes for reading and writing (binary)
+    files used with the GEOS-Chem CTM.
+    
+    Submodules for reading and writing:
+    - gchem.bpch: Reading and writing files in the binary punch format.
+    - gchem.info: Reading 'tracerinfo.dat' and 'diaginfo.dat'
+    - gchem.uff: Reading and writing unformatted Fortran Files.
+    
+    Other modules:
+    - gchem.misc: Some routines for working with times, reading GMAO met fields.
+    - gchem.grids: Collection of grids used by GEOS-Chem.
+
+PACKAGE CONTENTS
+    bpch
+    grids
+    info
+    misc
+    uff
+
+

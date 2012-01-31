@@ -1,0 +1,114 @@
+Help on module gchem.bpch in gchem:
+
+NAME
+    gchem.bpch - Reading and writing Binary Punch files (bpch)
+
+FILE
+    /home/gerrit/Projects/gchem/gchem/bpch.py
+
+CLASSES
+    __builtin__.object
+        DataBlock
+        File
+    
+    class DataBlock(__builtin__.object)
+     |  Methods defined here:
+     |  
+     |  __init__(self, category, center180, halfpolar, modelname, number, origin, resolution, shape, times, unit, name=None, fullname=None, carbon_weight=None, molecular_weight=None, skip=None, file=None, position=None, values=None)
+     |      The class presents a data block in a binary punch file.
+     |  
+     |  __repr__(self)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  size
+     |  
+     |  value
+    
+    class File(__builtin__.object)
+     |  Methods defined here:
+     |  
+     |  __enter__(self)
+     |  
+     |  __exit__(self, type, value, traceback)
+     |  
+     |  __init__(self, title='CTM Punch File by gchem', filetype='CTM bin 02', datablocks=None)
+     |      A binary punch file: Can be used to create a punch file. To open an
+     |      existing file, use the `File.fromfile` class method or the `open_file`
+     |      function.
+     |      
+     |      Arguments:
+     |      - title (default 'CTM Punch File by gchem')
+     |      - filetype (default 'CTM bin 02')
+     |      - datablocks: list of DataBlock objects or None (default)
+     |  
+     |  __iter__(self)
+     |  
+     |  __len__(self)
+     |  
+     |  __repr__(self)
+     |  
+     |  append(self, datablock)
+     |      append datablock
+     |  
+     |  close(self)
+     |      Close file (if open).
+     |  
+     |  filter(self, name=None, number=None, category=None, time=None, fmt='%Y-%m-%d')
+     |      self.filter(name=None, number, category=None, time=None,
+     |          fmt='%Y-%m-%d')
+     |      
+     |      Returns list of datablocks which meet 'name', 'category' and
+     |      'time'. For 'time' a format can be used.
+     |  
+     |  save_as(self, filename, endian='>')
+     |      Save Binary Punch file to `filename`.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |  
+     |  fromfile(cls, filename, mode='rb', endian='>', skip_values=False) from __builtin__.type
+     |      Creates a binary punch file from a given filename.
+     |      
+     |      Arguments:
+     |      - filename
+     |      - mode (default 'rb')
+     |      - endian (default '>')
+     |      - skip values: If True only datablock headers will be read into
+     |        memory and the values will read on request. Default: False.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  categories
+
+FUNCTIONS
+    make_restartfile(date, modelname='GEOS5_47L', n_tracers=43, origin=(0, 0, 0), tracer_numbers=None, resolution=(2.5, 2.0), shape=(144, 91, 47))
+        Create restart file.
+        
+        Example
+        >>> create_restartfile(...).save_as(filename)
+    
+    open_file(filename, mode='rb', endian='>', read_all=False)
+        Open a binary punch file with given `filename` and `mode`
+        (default 'rb').
+
+DATA
+    CATEGORY2COMMENT = {}
+    CATEGORY2OFFSET = {'ACETSRCE': 22000, 'ANTHSRCE': 1000, 'BC-ANTH': 330...
+    TRACER2INFO = {1: {'c_weight': 1, 'full_name': 'NOx tracer', 'molecula...
+
+

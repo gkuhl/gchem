@@ -1,0 +1,73 @@
+Help on module gchem.grids in gchem:
+
+NAME
+    gchem.grids
+
+FILE
+    /home/gerrit/Projects/gchem/gchem/grids.py
+
+DESCRIPTION
+    This module contains (some) grid coordinates used with GEOS-Chem as numpy
+    arrays
+    
+    Grid box longitude and latitude [degrees] for 2°x2.5° resolution:
+        c_lon_2x25          center
+        e_lon_2x25          edges
+        c_lat_2x25          center
+        e_lat_2x25          edges
+    
+    Grid box longitude and latitude [degrees] for a 4°x5° resolution:
+        c_lon_4x5           center
+        e_lon_4x5           edges
+        c_lat_4x5           center
+        e_lat_4x5           edges
+    
+    Grid box longitude and latitude [degrees] for a 0.5°x0.667° resolution for
+    China:
+        c_lon_05x0667_CH    center
+        e_lon_05x0667_CH    edges
+        c_lat_05x0667_CH    center
+        e_lat_05x0667_CH    edges
+    
+    Generic grid longitudes and latitudes [degrees]:
+        c_lon_generic       center
+        e_lon_generic       edges
+        c_lat_generic       center
+        e_lat_generic       edges
+    
+    Reduced GEOS 5 grid box level edges:
+        e_eta_geos5_r       eta coordinate [1]
+        e_km_geos5_r        altitude in km
+        e_hPa_geos5_r       pressure in hPa
+    
+    Reduced GEOS 5 grid box level centers:
+        c_eta_geos5_r       eta coordinate¹
+        c_km_geos5_r        altitude in km
+        c_hPa_geos5_r       pressure in hPa
+    
+    
+    [1] eta = (p - p_TOA) / (p_S - p_TOA), S: surface, TOA: top of atmosphere
+
+DATA
+    c_eta_geos5_r = array([  9.94283000e-01,   9.79217000e-01,   9.6...e-0...
+    c_hPa_geos5_r = array([  1.00422500e+03,   9.89009000e+02,   9.7...e-0...
+    c_km_geos5_r = array([  7.10000000e-02,   2.01000000e-01,   3.3...e+01...
+    c_lat_05x0667_CH = array([-11. , -10.5, -10. ,  -9.5,  -9. ,  -8.5,......
+    c_lat_2x25 = array([-89.5, -88. , -86. , -84. , -82. , -80. ,... 78. ,...
+    c_lat_4x5 = array([-89., -86., -82., -78., -74., -70., -66.,... 66.,  ...
+    c_lat_generic = array([-89.5, -88.5, -87.5, -86.5, -85.5, -84.5,... 83...
+    c_lon_05x0667_CH = array([  70.   ,   70.667,   71.333,   72.   ,  ......
+    c_lon_2x25 = array([-180. , -177.5, -175. , -172.5, -170. , -...  165....
+    c_lon_4x5 = array([-180., -175., -170., -165., -160., -155.,... 145., ...
+    c_lon_generic = array([-179.5, -178.5, -177.5, -176.5, -175.5, -...  1...
+    e_eta_geos5_r = array([  1.00179600e+00,   9.86769000e-01,   9.7...900...
+    e_hPa_geos5_r = array([  1.01181400e+03,   9.96636000e+02,   9.8...100...
+    e_km_geos5_r = array([  6.00000000e-03,   1.35000000e-01,   2.6...9260...
+    e_lat_2x25 = array([-90., -89., -87., -85., -83., -81., -79.,... 79., ...
+    e_lat_4x5 = array([-90., -88., -84., -80., -76., -72., -68.,... 68.,  ...
+    e_lat_generic = array([-90., -89., -88., -87., -86., -85., -84.,... 84...
+    e_lon_2x25 = array([-181.25, -178.75, -176.25, -173.75, -171....     1...
+    e_lon_4x5 = array([-182.5, -177.5, -172.5, -167.5, -162.5, -...,  157....
+    e_lon_generic = array([-180., -179., -178., -177., -176., -175.,... 17...
+
+

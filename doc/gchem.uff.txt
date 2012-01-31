@@ -1,0 +1,192 @@
+Help on module gchem.uff in gchem:
+
+NAME
+    gchem.uff - # coding: utf-8
+
+FILE
+    /home/gerrit/Projects/gchem/gchem/uff.py
+
+CLASSES
+    __builtin__.file(__builtin__.object)
+        FortranFile
+    
+    class FortranFile(__builtin__.file)
+     |  Method resolution order:
+     |      FortranFile
+     |      __builtin__.file
+     |      __builtin__.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, filename, mode='rb', endian='@')
+     |      FortranFile(filenname, mode='rb', endian='@')
+     |      
+     |      A class for reading and writing unformatted Fortran files. Fortran
+     |      writes data as "lines" when using the PRINT or WRITE statements.
+     |      Each line consists of:
+     |          - a prefix (4 byte integer gives the size of the data)
+     |          - the real data
+     |          - a suffix (same as prefix).
+     |      
+     |      This class can be used to read and write these "lines", in a similar
+     |      way as reading "real lines" in a text file. A format can be given,
+     |      while reading or writing to pack or unpack data into a binary
+     |      format, using the 'struct' modul from the Python standard library.
+     |      
+     |      Arguments of FortranFile:
+     |      
+     |      filename, mode
+     |          'filename' and 'mode' of the file. Default mode is 'rb' (reading
+     |          binary).
+     |      endian
+     |          byte order, size and alignment of the data in
+     |          the file. Possible characters are e.g.: '@' native (default),
+     |          '<' little-endian, and '>' big-endian.
+     |      
+     |      See Documentation of Python's struct module for details endians and
+     |      format strings: http://docs.python.org/library/struct.html
+     |  
+     |  __iter__(self)
+     |  
+     |  next(self, fmt=None)
+     |  
+     |  readline(self, fmt=None)
+     |      readline(self, fmt=None):
+     |      
+     |      Return next unformatted "line". If format is given, unpack content,
+     |      otherwise return byte string.
+     |  
+     |  readlines(self)
+     |      readlines() -> list strings, each a line from the file.
+     |  
+     |  skipline(self)
+     |      Skip the next line and returns position and size of line. Raises IOError
+     |      if pre- and suffix of line do not match.
+     |  
+     |  writeline(self, fmt, *args)
+     |      Write `line` (list of objects) with given `fmt` to file. The
+     |      `line` will be chained if object is iterable (except for
+     |      basestrings).
+     |  
+     |  writelines(self, lines, fmt)
+     |      Write `lines` with given `format`.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from __builtin__.file:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __enter__(...)
+     |      __enter__() -> self.
+     |  
+     |  __exit__(...)
+     |      __exit__(*excinfo) -> None.  Closes the file.
+     |  
+     |  __getattribute__(...)
+     |      x.__getattribute__('name') <==> x.name
+     |  
+     |  __repr__(...)
+     |      x.__repr__() <==> repr(x)
+     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  close(...)
+     |      close() -> None or (perhaps) an integer.  Close the file.
+     |      
+     |      Sets data attribute .closed to True.  A closed file cannot be used for
+     |      further I/O operations.  close() may be called more than once without
+     |      error.  Some kinds of file objects (for example, opened by popen())
+     |      may return an exit status upon closing.
+     |  
+     |  fileno(...)
+     |      fileno() -> integer "file descriptor".
+     |      
+     |      This is needed for lower-level file interfaces, such os.read().
+     |  
+     |  flush(...)
+     |      flush() -> None.  Flush the internal I/O buffer.
+     |  
+     |  isatty(...)
+     |      isatty() -> true or false.  True if the file is connected to a tty device.
+     |  
+     |  read(...)
+     |      read([size]) -> read at most size bytes, returned as a string.
+     |      
+     |      If the size argument is negative or omitted, read until EOF is reached.
+     |      Notice that when in non-blocking mode, less data than what was requested
+     |      may be returned, even if no size parameter was given.
+     |  
+     |  readinto(...)
+     |      readinto() -> Undocumented.  Don't use this; it may go away.
+     |  
+     |  seek(...)
+     |      seek(offset[, whence]) -> None.  Move to new file position.
+     |      
+     |      Argument offset is a byte count.  Optional argument whence defaults to
+     |      0 (offset from start of file, offset should be >= 0); other values are 1
+     |      (move relative to current position, positive or negative), and 2 (move
+     |      relative to end of file, usually negative, although many platforms allow
+     |      seeking beyond the end of a file).  If the file is opened in text mode,
+     |      only offsets returned by tell() are legal.  Use of other offsets causes
+     |      undefined behavior.
+     |      Note that not all file objects are seekable.
+     |  
+     |  tell(...)
+     |      tell() -> current file position, an integer (may be a long integer).
+     |  
+     |  truncate(...)
+     |      truncate([size]) -> None.  Truncate the file to at most size bytes.
+     |      
+     |      Size defaults to the current file position, as returned by tell().
+     |  
+     |  write(...)
+     |      write(str) -> None.  Write string str to file.
+     |      
+     |      Note that due to buffering, flush() or close() may be needed before
+     |      the file on disk reflects the data written.
+     |  
+     |  xreadlines(...)
+     |      xreadlines() -> returns self.
+     |      
+     |      For backward compatibility. File objects now include the performance
+     |      optimizations previously implemented in the xreadlines module.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from __builtin__.file:
+     |  
+     |  closed
+     |      True if the file is closed
+     |  
+     |  encoding
+     |      file encoding
+     |  
+     |  errors
+     |      Unicode error handler
+     |  
+     |  mode
+     |      file mode ('r', 'U', 'w', 'a', possibly with 'b' or '+' added)
+     |  
+     |  name
+     |      file name
+     |  
+     |  newlines
+     |      end-of-line convention used in this file
+     |  
+     |  softspace
+     |      flag indicating that a space needs to be printed; used by print
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from __builtin__.file:
+     |  
+     |  __new__ = <built-in method __new__ of type object>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+
+

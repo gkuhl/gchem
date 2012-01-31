@@ -1,0 +1,57 @@
+Descripton
+''''''''''
+'gchem' is collection of routines for reading and writing files used by
+the GEOS-Chem Chemistry Transport Model.
+
+
+Requirements
+''''''''''''
+- python 2.5 (or higher, not 3.x)
+- numpy
+
+
+Install
+'''''''
+1) Install python and numpy
+2) Download 'gchem-X-Y-Z.tar.gz' from github, unzip and cd into 'gchem-X-Y-Z'.
+3) Run 'python setup.py install' to install and check your installtion by
+   doing 'import gchem' in the python shell.
+
+
+Documentation
+'''''''''''''
+The 'gchem' namespace has the following submodules:
+- bpch  ::: Reading and writing files in the binary punch format.
+- grids ::: Collection of grids used by GEOS-Chem.
+- info  ::: Reading 'tracerinfo.dat' and 'diaginfo.dat'
+- misc  ::: Some routines for working with times, reading GMAO met fields.
+- uff   ::: Reading and writing unformatted Fortran Files.
+
+A more detailed documentation can be found in 'doc' folder or in the docstring
+of the routines. In the 'example' folder some (currently only one) example can
+be found.
+
+
+Copyright
+'''''''''
+Copyright (C) 2012 Gerrit Kuhlmann
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+Contact
+'''''''
+Gerrit Kuhlmann <gerrit.kuhlmann@gmail.com>
+
+
