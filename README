@@ -15,7 +15,7 @@ Installing
 Download 'gchem-X-Y-Z.tar.gz' from github [1], unzip and cd into
 'gchem-X-Y-Z'. Run 'python setup.py install' to install 'gchem'.
 
-[1] https://github.com/downloads/gkuhl/gchem/
+[1] https://github.com/gkuhl/gchem/downloads/
 
 Documentation
 '''''''''''''
