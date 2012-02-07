@@ -7,7 +7,7 @@ files = ["data/*"]
 
 setup(
     name                = 'gchem',
-    version             = '0.1.0',
+    version             = '0.1.1',
     description         = 'Read and write files from GEOS-Chem chemistry transport model',
     long_description    = """
     Module for reading and writing input/output files from the GEOS-Chem chemistry
