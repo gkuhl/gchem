@@ -83,7 +83,7 @@ class DataBlock(object):
         if (self._values is None and self._file is not None
             and self._position is not None
         ):
-            self._file.seek(position)
+            self._file.seek(self._position)
             value = numpy.array(self._file.readline('*f'))
             value = value.reshape(self.shape, order='F')
             self._values = value
@@ -316,12 +316,12 @@ class File(object):
                 out_file.writeline('%df' % b.size, *b.value.flatten('F'))
 
 
-def open_file(filename, mode='rb', endian='>', read_all=False):
+def open_file(filename, mode='rb', endian='>', skip_values=False):
     """\
     Open a binary punch file with given `filename` and `mode`
     (default 'rb').
     """
-    return File.fromfile(filename, mode, endian, read_all)
+    return File.fromfile(filename, mode, endian, skip_values)
 
 
 def make_restartfile(date, modelname='GEOS5_47L', n_tracers=43,
